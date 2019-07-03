@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Tetris2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tetris2">
+				<Option output="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Tetris2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/viking/Programing-stuff/cppProjects/Tetris2/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tetris2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Tetris2/fast">
+				<Option output="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Tetris2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/viking/Programing-stuff/cppProjects/Tetris2/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Tetris2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/Blocks_system.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/Game.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/I_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/J_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/L_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/O_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/S_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/Structures.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/T_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/Tetrimino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/include/Z_polyomino.h">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/main.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/Blocks_system.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/Game.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/I_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/J_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/L_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/O_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/S_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/T_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/Tetrimino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/src/Z_polyomino.cpp">
+			<Option target="Tetris2"/>
+		</Unit>
+		<Unit filename="/home/viking/Programing-stuff/cppProjects/Tetris2/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
