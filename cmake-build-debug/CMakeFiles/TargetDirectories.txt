@@ -1,3 +1,0 @@
-/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/CMakeFiles/Tetris2.dir
-/home/viking/Programing-stuff/cppProjects/Tetris2/cmake-build-debug/CMakeFiles/edit_cache.dir
