@@ -11,15 +11,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-Game::Game()
+Game::Game(): next_spawn(rand() % 7)
 {
     //ctor
     window.create(sf::VideoMode( 640, 480 ), "Tetris 1.0");
     scene.game_field.setPosition(window.getSize().x/2-scene.game_field.getSize().x,40);
     scene.next_spawn_field.setPosition(window.getSize().x/2+100,40);
-    points=0;
 
-    if(!font.loadFromFile("fonts/PIXEARG_.TTF")){
+    if(!font.loadFromFile("fonts/digital-7.ttf")){
         std::cout<<"can't load font from file\n";
         //system("pwd");
     }else{
@@ -30,10 +29,6 @@ Game::Game()
     points_monitor.setStyle(sf::Text::Bold);
     points_monitor.setPosition(10, 10);
 
-    srand(time(NULL));
-    flop_time=400;
-
-    next_spawn = rand()%7;
     switch(next_spawn){
         case 0:
             scene.next_tetrimino = new T_polyomino();
@@ -60,11 +55,6 @@ Game::Game()
             std::cout<<"spawn error\n";
         break;
     }
-}
-
-Game::~Game()
-{
-    //dtor
 }
 
 int Game::control()
