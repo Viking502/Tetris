@@ -8,16 +8,16 @@ class Game
     public:
         sf::RenderWindow window;
         sf::Clock stoper;
-        int flop_time;
+        int flop_time = 400;
         sf::Event event;
         Blocks_system scene;
-        char next_spawn;
-        int points;
+        char next_spawn = 0;
+        int points = 0;
         sf::Font font;
         sf::Text points_monitor;
 
         Game();
-        virtual ~Game();
+        virtual ~Game() = default;
         int control();
         bool collision();
         void is_flor_full();
@@ -25,10 +25,6 @@ class Game
         bool show();
         int play();
         bool is_game_over();
-
-    protected:
-
-    private:
 };
 
 #endif // GAME_H
