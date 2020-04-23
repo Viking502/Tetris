@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Tetrimino.h"
 #include <map>
+#include <memory.h>
 
 
 class Blocks_system
@@ -17,8 +18,8 @@ class Blocks_system
         Blocks_net next_spawn_space;
 
         int number_of_tetrimino=1;
-        Tetrimino *tetrimino;
-        Tetrimino *next_tetrimino;
+        std::unique_ptr<Tetrimino> tetrimino;
+        std::unique_ptr<Tetrimino> next_tetrimino;
         sf::RectangleShape block_pointer;
 
         std::map<char, sf::Color> color_map;

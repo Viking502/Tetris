@@ -31,25 +31,25 @@ Game::Game(): next_spawn(rand() % 7)
 
     switch(next_spawn){
         case 0:
-            scene.next_tetrimino = new T_polyomino();
+            scene.next_tetrimino = std::make_unique<T_polyomino>();
         break;
         case 1:
-            scene.next_tetrimino = new I_polyomino();
+            scene.next_tetrimino = std::make_unique<I_polyomino>();
         break;
         case 2:
-            scene.next_tetrimino = new O_polyomino();
+            scene.next_tetrimino = std::make_unique<O_polyomino>();
         break;
         case 3:
-            scene.next_tetrimino = new Z_polyomino();
+            scene.next_tetrimino = std::make_unique<Z_polyomino>();
         break;
         case 4:
-            scene.next_tetrimino = new S_polyomino();
+            scene.next_tetrimino = std::make_unique<S_polyomino>();
         break;
         case 5:
-            scene.next_tetrimino = new L_polyomino();
+            scene.next_tetrimino = std::make_unique<L_polyomino>();
         break;
         case 6:
-            scene.next_tetrimino = new J_polyomino();
+            scene.next_tetrimino = std::make_unique<J_polyomino>();
         break;
         default:
             std::cout<<"spawn error\n";
@@ -173,7 +173,6 @@ bool Game::collision()
             sf::sleep(sf::seconds(1));
         }
 
-        delete scene.tetrimino;
         spawn_new_tetrimino();
 
         show();
@@ -207,31 +206,31 @@ void Game::is_flor_full()
 
 void Game::spawn_new_tetrimino()
 {
-    scene.tetrimino = scene.next_tetrimino;
+    scene.tetrimino = std::move(scene.next_tetrimino);
 
     next_spawn = rand()%7;
     switch(next_spawn){
         case 0:
-            scene.next_tetrimino = new T_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<T_polyomino>();
+            break;
         case 1:
-            scene.next_tetrimino = new I_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<I_polyomino>();
+            break;
         case 2:
-            scene.next_tetrimino = new O_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<O_polyomino>();
+            break;
         case 3:
-            scene.next_tetrimino = new Z_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<Z_polyomino>();
+            break;
         case 4:
-            scene.next_tetrimino = new S_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<S_polyomino>();
+            break;
         case 5:
-            scene.next_tetrimino = new L_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<L_polyomino>();
+            break;
         case 6:
-            scene.next_tetrimino = new J_polyomino();
-        break;
+            scene.next_tetrimino = std::make_unique<J_polyomino>();
+            break;
         default:
             std::cout<<"spawn error\n";
         break;
