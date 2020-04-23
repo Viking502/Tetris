@@ -15,8 +15,8 @@ Game::Game(): next_spawn(rand() % 7)
 {
     //ctor
     window.create(sf::VideoMode( 640, 480 ), "Tetris 1.0");
-    scene.game_field.setPosition(window.getSize().x/2-scene.game_field.getSize().x,40);
-    scene.next_spawn_field.setPosition(window.getSize().x/2+100,40);
+    scene.game_field.setPosition(window.getSize().x / 2 - scene.game_field.getSize().x, 40);
+    scene.next_spawn_field.setPosition(window.getSize().x / 2 + 100, 40);
 
     if(!font.loadFromFile("fonts/digital-7.ttf")){
         std::cout<<"can't load font from file\n";
@@ -293,7 +293,8 @@ bool Game::is_game_over()
 
     for(int x=1;x<11;x++){
         if(scene.blocks_net.id[x][1]>0){
-            std::cout<<"GAME OVER!\n"<<points;
+            std::cout << "GAME OVER!\n;";
+            std::cout << "Your score: " << points;
             points=0;
             flop_time=400;
             //clear game fielld
@@ -303,8 +304,8 @@ bool Game::is_game_over()
                     scene.blocks_net.color[x][y]=' ';
                 }
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
