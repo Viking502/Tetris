@@ -2,6 +2,17 @@
 
 Blocks_system::Blocks_system()
 {
+    color_map = {
+            std::pair<char, sf::Color>('t', sf::Color(236,121,236)),
+            std::pair<char, sf::Color>('i', sf::Color(121,236,236)),
+            std::pair<char, sf::Color>('o', sf::Color(236,236,121)),
+            std::pair<char, sf::Color>('z', sf::Color(236,121,121)),
+            std::pair<char, sf::Color>('s', sf::Color(150,236,121)),
+            std::pair<char, sf::Color>('l', sf::Color(236,179,121)),
+            std::pair<char, sf::Color>('j', sf::Color(121,121,236)),
+            std::pair<char, sf::Color>('q', sf::Color(255,255,255))
+    };
+
     //create game_field
     game_field.setSize(sf::Vector2f(200,400));
     game_field.setFillColor(sf::Color(200,200,200));
@@ -32,7 +43,7 @@ Blocks_system::Blocks_system()
         blocks_net.color[x][20]='q';
     }
 
-    //clear nesxt spawn table
+    //clear next spawn table
     for(int x=0;x<5;x++){
         for(int y=0;y<2;y++){
             next_spawn_space.id[x][y]=0;
@@ -40,17 +51,10 @@ Blocks_system::Blocks_system()
         }
     }
 
-
     //create block_pointer
     block_pointer.setSize(sf::Vector2f(20,20));
     block_pointer.setOutlineColor(sf::Color::Black);
     block_pointer.setOutlineThickness(-1);
-    //ctor
-}
-
-Blocks_system::~Blocks_system()
-{
-    //dtor
 }
 
 void Blocks_system::flor_crush(int flor)
@@ -70,38 +74,14 @@ void Blocks_system::flor_crush(int flor)
 void Blocks_system::show_next_spawn(sf::RenderWindow &window){
     for(int y=0; y<2; y++){
         for(int x=0; x<5; x++){
-            switch(next_spawn_space.color[x][y]){
-                case 't':
-                    block_pointer.setFillColor(sf::Color(236,121,236));
-                    break;
-                case 'i':
-                    block_pointer.setFillColor(sf::Color(121,236,236));
-                    break;
-                case 'o':
-                    block_pointer.setFillColor(sf::Color(236,236,121));
-                    break;
-                case 'z':
-                    block_pointer.setFillColor(sf::Color(236,121,121));
-                    break;
-                case 's':
-                    block_pointer.setFillColor(sf::Color(150,236,121));
-                    break;
-                case 'l':
-                    block_pointer.setFillColor(sf::Color(236,179,121));
-                    break;
-                case 'j':
-                    block_pointer.setFillColor(sf::Color(121,121,236));
-                    break;
-                case 'q':
-                    block_pointer.setFillColor(sf::Color(255,255,255));
 
-                    break;
-                default:
-                    continue;
-                    break;
+//          chose color
+            if(next_spawn_space.color[x][y] != ' ') {
+                block_pointer.setFillColor(color_map[next_spawn_space.color[x][y]]);
+                block_pointer.setPosition(sf::Vector2f(
+                        x * 20 + game_field.getPosition().x + 300, y * 20 + game_field.getPosition().y + 20));
+                window.draw(block_pointer);
             }
-            block_pointer.setPosition(sf::Vector2f(x*20+game_field.getPosition().x+300,y*20+game_field.getPosition().y+20));
-            window.draw(block_pointer);
         }
     }
 }

@@ -11,15 +11,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-Game::Game()
+Game::Game(): next_spawn(rand() % 7)
 {
     //ctor
     window.create(sf::VideoMode( 640, 480 ), "Tetris 1.0");
     scene.game_field.setPosition(window.getSize().x/2-scene.game_field.getSize().x,40);
     scene.next_spawn_field.setPosition(window.getSize().x/2+100,40);
-    points=0;
 
-    if(!font.loadFromFile("fonts/PIXEARG_.TTF")){
+    if(!font.loadFromFile("fonts/digital-7.ttf")){
         std::cout<<"can't load font from file\n";
         //system("pwd");
     }else{
@@ -30,10 +29,6 @@ Game::Game()
     points_monitor.setStyle(sf::Text::Bold);
     points_monitor.setPosition(10, 10);
 
-    srand(time(NULL));
-    flop_time=400;
-
-    next_spawn = rand()%7;
     switch(next_spawn){
         case 0:
             scene.next_tetrimino = new T_polyomino();
@@ -60,11 +55,6 @@ Game::Game()
             std::cout<<"spawn error\n";
         break;
     }
-}
-
-Game::~Game()
-{
-    //dtor
 }
 
 int Game::control()
@@ -266,39 +256,12 @@ bool Game::show()
 
     for(int x=0;x<12;x++){
         for(int y=0;y<21;y++){
-            switch(scene.blocks_net.color[x][y]){
-                case 't':
-                    scene.block_pointer.setFillColor(sf::Color(236,121,236));
-                    break;
-                case 'i':
-                    scene.block_pointer.setFillColor(sf::Color(121,236,236));
-                    break;
-                case 'o':
-                    scene.block_pointer.setFillColor(sf::Color(236,236,121));
-                    break;
-                case 'z':
-                    scene.block_pointer.setFillColor(sf::Color(236,121,121));
-                    break;
-                case 's':
-                    scene.block_pointer.setFillColor(sf::Color(150,236,121));
-                    break;
-                case 'l':
-                    scene.block_pointer.setFillColor(sf::Color(236,179,121));
-                    break;
-                case 'j':
-                    scene.block_pointer.setFillColor(sf::Color(121,121,236));
-                    break;
-                case 'q':
-                    scene.block_pointer.setFillColor(sf::Color(255,255,255));
-
-                    break;
-                default:
-                    continue;
-                    break;
+            if(scene.blocks_net.color[x][y] != ' ') {
+                scene.block_pointer.setFillColor(scene.color_map[scene.blocks_net.color[x][y]]);
+                scene.block_pointer.setPosition(sf::Vector2f((x - 1) * 20 + scene.game_field.getPosition().x,
+                                                             y * 20 + scene.game_field.getPosition().y));
+                window.draw(scene.block_pointer);
             }
-            scene.block_pointer.setPosition(sf::Vector2f((x-1)*20+scene.game_field.getPosition().x,y*20+scene.game_field.getPosition().y));
-            window.draw(scene.block_pointer);
-
         }
     }
     scene.show_next_spawn(window);

@@ -2,6 +2,7 @@
 #define BLOCKS_SYSTEM_H
 #include <SFML/Graphics.hpp>
 #include "Tetrimino.h"
+#include <map>
 
 
 class Blocks_system
@@ -20,8 +21,10 @@ class Blocks_system
         Tetrimino *next_tetrimino;
         sf::RectangleShape block_pointer;
 
+        std::map<char, sf::Color> color_map;
+
         Blocks_system();
-        virtual ~Blocks_system();
+        virtual ~Blocks_system() = default;
 
         void flor_crush(int flor);
         void show_next_spawn(sf::RenderWindow &window);
