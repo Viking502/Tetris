@@ -256,39 +256,12 @@ bool Game::show()
 
     for(int x=0;x<12;x++){
         for(int y=0;y<21;y++){
-            switch(scene.blocks_net.color[x][y]){
-                case 't':
-                    scene.block_pointer.setFillColor(sf::Color(236,121,236));
-                    break;
-                case 'i':
-                    scene.block_pointer.setFillColor(sf::Color(121,236,236));
-                    break;
-                case 'o':
-                    scene.block_pointer.setFillColor(sf::Color(236,236,121));
-                    break;
-                case 'z':
-                    scene.block_pointer.setFillColor(sf::Color(236,121,121));
-                    break;
-                case 's':
-                    scene.block_pointer.setFillColor(sf::Color(150,236,121));
-                    break;
-                case 'l':
-                    scene.block_pointer.setFillColor(sf::Color(236,179,121));
-                    break;
-                case 'j':
-                    scene.block_pointer.setFillColor(sf::Color(121,121,236));
-                    break;
-                case 'q':
-                    scene.block_pointer.setFillColor(sf::Color(255,255,255));
-
-                    break;
-                default:
-                    continue;
-                    break;
+            if(scene.blocks_net.color[x][y] != ' ') {
+                scene.block_pointer.setFillColor(scene.color_map[scene.blocks_net.color[x][y]]);
+                scene.block_pointer.setPosition(sf::Vector2f((x - 1) * 20 + scene.game_field.getPosition().x,
+                                                             y * 20 + scene.game_field.getPosition().y));
+                window.draw(scene.block_pointer);
             }
-            scene.block_pointer.setPosition(sf::Vector2f((x-1)*20+scene.game_field.getPosition().x,y*20+scene.game_field.getPosition().y));
-            window.draw(scene.block_pointer);
-
         }
     }
     scene.show_next_spawn(window);
