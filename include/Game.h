@@ -17,7 +17,7 @@ class Game
         sf::Text points_monitor;
 
         Game();
-        virtual ~Game() = default;
+        ~Game() = default;
         int control();
         bool collision();
         void is_flor_full();

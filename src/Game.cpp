@@ -15,8 +15,8 @@ Game::Game(): next_spawn(rand() % 7)
 {
     //ctor
     window.create(sf::VideoMode( 640, 480 ), "Tetris 1.0");
-    scene.game_field.setPosition(window.getSize().x/2-scene.game_field.getSize().x,40);
-    scene.next_spawn_field.setPosition(window.getSize().x/2+100,40);
+    scene.game_field.setPosition(window.getSize().x / 2 - scene.game_field.getSize().x, 40);
+    scene.next_spawn_field.setPosition(window.getSize().x / 2 + 100, 40);
 
     if(!font.loadFromFile("fonts/digital-7.ttf")){
         std::cout<<"can't load font from file\n";
@@ -164,14 +164,7 @@ bool Game::collision()
             flop_time-=5;
 
         is_flor_full();
-        if(is_game_over()){
-            sf::Text endText("GAME OVER", font, 60);
-            endText.setFillColor(sf::Color::Red);
-            endText.setPosition(120,200);
-            window.draw(endText);
-            window.display();
-            sf::sleep(sf::seconds(1));
-        }
+        is_game_over();
 
         spawn_new_tetrimino();
 
@@ -179,12 +172,12 @@ bool Game::collision()
 
         stoper.restart();
 
-        return 1;
+        return true;
     }
     scene.tetrimino->try_position.main_block_pos.y--;
     scene.tetrimino->rotation(scene.blocks_net,"none");
 
-    return 0;
+    return false;
 }
 
 void Game::is_flor_full()
@@ -293,18 +286,36 @@ bool Game::is_game_over()
 
     for(int x=1;x<11;x++){
         if(scene.blocks_net.id[x][1]>0){
-            std::cout<<"GAME OVER!\n"<<points;
+
+//            window.clear(sf::Color(60, 60, 60, 0));
+            sf::RectangleShape temp{static_cast<sf::Vector2f>(window.getSize())};
+            temp.setPosition(0, 0);
+            temp.setFillColor(sf::Color{60, 60, 60, 160});
+            window.draw(temp);
+            sf::Text endText("GAME OVER", font, 80);
+            endText.setFillColor(sf::Color::Red);
+            endText.setPosition(window.getSize().x / 2 - 160,window.getSize().y / 2 - 200);
+            window.draw(endText);
+
+            endText.setString(std::to_string(points));
+            endText.setCharacterSize(140);
+            endText.setPosition(window.getSize().x / 2 - 40,window.getSize().y / 2 - 60);
+            window.draw(endText);
+            window.display();
+            sf::sleep(sf::seconds(1));
+
             points=0;
             flop_time=400;
             //clear game fielld
-            for(int x=1;x<11;x++){
-                for(int y=0;y<20;y++){
-                    scene.blocks_net.id[x][y]=0;
-                    scene.blocks_net.color[x][y]=' ';
+
+            for(int dx=1;dx<11;dx++){
+                for(int dy=0;dy<20;dy++){
+                    scene.blocks_net.id[dx][dy]=0;
+                    scene.blocks_net.color[dx][dy]=' ';
                 }
             }
-            return 1;
+            return true;
         }
     }
-    return 0;
+    return false;
 }
